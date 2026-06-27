@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fetchYahoo } from "@/lib/ingest/yahoo";
 import { parseNav, monthEndDates } from "@/lib/ingest/sec";
-import { BENCHMARKS, STOCKS, TAX_FUNDS } from "@/config/universe";
+import { BENCHMARKS, STOCKS, GLOBAL_STOCKS, TAX_FUNDS } from "@/config/universe";
 import { Point, Series } from "@/lib/types";
 
 const SEC_KEY = process.env.SEC_Fund_Daily_Info_API_PRIMARY_KEY!;
@@ -33,6 +33,7 @@ async function main() {
 
   for (const b of [...BENCHMARKS]) all.push({ id: b.id, label: b.label, kind: "benchmark", points: await fetchYahoo(b.ticker) });
   for (const s of STOCKS) all.push({ id: s.id, label: s.label, kind: "stock", points: await fetchYahoo(s.ticker) });
+  for (const s of GLOBAL_STOCKS) all.push({ id: s.id, label: s.label, kind: "global", points: await fetchYahoo(s.ticker) });
 
   // funds need a date range; use the widest stock/benchmark window available
   const startYm = "2014-01", endYm = new Date().toISOString().slice(0, 7);

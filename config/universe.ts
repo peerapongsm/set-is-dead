@@ -24,6 +24,16 @@ export const STOCKS: StockDef[] = [
   { id: "CPN", label: "CPN", ticker: "CPN.BK" },
 ];
 
+export const GLOBAL_STOCKS: StockDef[] = [
+  { id: "AAPL", label: "Apple", ticker: "AAPL" },
+  { id: "MSFT", label: "Microsoft", ticker: "MSFT" },
+  { id: "NVDA", label: "NVIDIA", ticker: "NVDA" },
+  { id: "GOOGL", label: "Alphabet (Google)", ticker: "GOOGL" },
+  { id: "AMZN", label: "Amazon", ticker: "AMZN" },
+  { id: "META", label: "Meta", ticker: "META" },
+  { id: "TSLA", label: "Tesla", ticker: "TSLA" },
+];
+
 // Curated tax funds. Controller fills real proj_ids from the SEC fund list during ingest
 // (query FundFactsheet, pick popular active RMF/SSF/ESG). IDs here are placeholders to replace.
 export const TAX_FUNDS: FundDef[] = [

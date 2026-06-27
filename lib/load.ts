@@ -5,7 +5,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export interface IndexEntry {
   id: string;
   label: string;
-  kind: "stock" | "benchmark" | "fund";
+  kind: "stock" | "benchmark" | "fund" | "global";
   category?: "RMF" | "SSF" | "ESG";
   start: string;
   end: string;

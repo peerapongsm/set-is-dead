@@ -14,6 +14,7 @@ const KIND_LABEL: Record<string, string> = {
   benchmark: "ดัชนี / เกณฑ์",
   fund: "กองทุนลดหย่อนภาษี",
   stock: "หุ้น",
+  global: "หุ้นต่างประเทศ",
 };
 
 const baht = (n: number) => "฿" + Math.round(n).toLocaleString("th-TH");
@@ -90,7 +91,7 @@ export default function Home() {
       <div className="grid">
         {/* ---- controls ---- */}
         <aside className="controls panel">
-          {(["benchmark", "fund", "stock"] as const).map((k) => {
+          {(["benchmark", "fund", "stock", "global"] as const).map((k) => {
             const items = index.filter((e) => e.kind === k);
             if (items.length === 0) return null;
             return (
