@@ -1,0 +1,131 @@
+[
+  {
+    "id": "SET50",
+    "label": "SET50 (TDEX)",
+    "kind": "benchmark",
+    "start": "2008-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "SET",
+    "label": "SET Index",
+    "kind": "benchmark",
+    "start": "1996-12",
+    "end": "2026-06"
+  },
+  {
+    "id": "SP500",
+    "label": "S&P 500",
+    "kind": "benchmark",
+    "start": "1984-12",
+    "end": "2026-06"
+  },
+  {
+    "id": "GOLD",
+    "label": "ทองคำ",
+    "kind": "benchmark",
+    "start": "2000-09",
+    "end": "2026-06"
+  },
+  {
+    "id": "BTC",
+    "label": "Bitcoin",
+    "kind": "benchmark",
+    "start": "2014-10",
+    "end": "2026-06"
+  },
+  {
+    "id": "PTT",
+    "label": "PTT",
+    "kind": "stock",
+    "start": "2001-12",
+    "end": "2026-06"
+  },
+  {
+    "id": "AOT",
+    "label": "AOT",
+    "kind": "stock",
+    "start": "2004-03",
+    "end": "2026-06"
+  },
+  {
+    "id": "CPALL",
+    "label": "CPALL",
+    "kind": "stock",
+    "start": "2003-10",
+    "end": "2026-06"
+  },
+  {
+    "id": "ADVANC",
+    "label": "ADVANC",
+    "kind": "stock",
+    "start": "2000-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "KBANK",
+    "label": "KBANK",
+    "kind": "stock",
+    "start": "2000-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "SCB",
+    "label": "SCB",
+    "kind": "stock",
+    "start": "2022-04",
+    "end": "2026-06"
+  },
+  {
+    "id": "BDMS",
+    "label": "BDMS",
+    "kind": "stock",
+    "start": "2000-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "DELTA",
+    "label": "DELTA",
+    "kind": "stock",
+    "start": "2000-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "GULF",
+    "label": "GULF",
+    "kind": "stock",
+    "start": "2025-04",
+    "end": "2026-06"
+  },
+  {
+    "id": "CPN",
+    "label": "CPN",
+    "kind": "stock",
+    "start": "2000-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "K-STARRMF",
+    "label": "K-STAR RMF (หุ้นไทย)",
+    "kind": "fund",
+    "category": "RMF",
+    "start": "2021-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "K-SUPSTAR-SSF",
+    "label": "K-SUPSTAR SSF (หุ้นไทย)",
+    "kind": "fund",
+    "category": "SSF",
+    "start": "2021-01",
+    "end": "2026-06"
+  },
+  {
+    "id": "K-ESGSI",
+    "label": "K-ESG SI (Thai ESG)",
+    "kind": "fund",
+    "category": "ESG",
+    "start": "2024-07",
+    "end": "2026-06"
+  }
+]

@@ -27,7 +27,7 @@ export const STOCKS: StockDef[] = [
 // Curated tax funds. Controller fills real proj_ids from the SEC fund list during ingest
 // (query FundFactsheet, pick popular active RMF/SSF/ESG). IDs here are placeholders to replace.
 export const TAX_FUNDS: FundDef[] = [
-  { id: "RMF1", label: "RMF หุ้นไทย (ตัวอย่าง)", projId: "FILL_FROM_SEC", category: "RMF" },
-  { id: "SSF1", label: "SSF หุ้นไทย (ตัวอย่าง)", projId: "FILL_FROM_SEC", category: "SSF" },
-  { id: "ESG1", label: "Thai ESG (ตัวอย่าง)", projId: "FILL_FROM_SEC", category: "ESG" },
+  { id: "K-STARRMF", label: "K-STAR RMF (หุ้นไทย)", projId: "M0405_2549", category: "RMF" },
+  { id: "K-SUPSTAR-SSF", label: "K-SUPSTAR SSF (หุ้นไทย)", projId: "M0161_2563", category: "SSF" },
+  { id: "K-ESGSI", label: "K-ESG SI (Thai ESG)", projId: "M0095_2567", category: "ESG" },
 ];
