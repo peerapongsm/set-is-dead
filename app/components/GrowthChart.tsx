@@ -54,11 +54,14 @@ function CustomTooltip({ active, payload, label }: TipProps) {
 }
 
 export function GrowthChart({ series }: { series: Series[] }) {
-  // merge aligned series into wide rows keyed by ym
-  const yms = series[0]?.points.map((p) => p.ym) ?? [];
-  const rows = yms.map((ym, i) => {
+  // merge series into wide rows keyed by ym (union of all months)
+  const ymSet = new Set<string>();
+  for (const s of series) for (const p of s.points) ymSet.add(p.ym);
+  const yms = [...ymSet].sort();
+  const maps = new Map(series.map((s) => [s.id, new Map(s.points.map((p) => [p.ym, p.value]))]));
+  const rows = yms.map((ym) => {
     const row: Record<string, number | string> = { ym };
-    for (const s of series) row[s.id] = Math.round(s.points[i]?.value ?? 0);
+    for (const s of series) { const v = maps.get(s.id)!.get(ym); if (v != null) row[s.id] = Math.round(v); }
     return row;
   });
 
@@ -92,6 +95,7 @@ export function GrowthChart({ series }: { series: Series[] }) {
             dot={false}
             strokeWidth={2.25}
             activeDot={{ r: 4, strokeWidth: 0 }}
+            connectNulls
           />
         ))}
       </LineChart>
