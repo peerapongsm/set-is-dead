@@ -127,5 +127,54 @@
     "category": "ESG",
     "start": "2024-07",
     "end": "2026-06"
+  },
+  {
+    "id": "AAPL",
+    "label": "Apple",
+    "kind": "global",
+    "start": "1984-12",
+    "end": "2026-06"
+  },
+  {
+    "id": "MSFT",
+    "label": "Microsoft",
+    "kind": "global",
+    "start": "1986-03",
+    "end": "2026-06"
+  },
+  {
+    "id": "NVDA",
+    "label": "NVIDIA",
+    "kind": "global",
+    "start": "1999-02",
+    "end": "2026-06"
+  },
+  {
+    "id": "GOOGL",
+    "label": "Alphabet (Google)",
+    "kind": "global",
+    "start": "2004-09",
+    "end": "2026-06"
+  },
+  {
+    "id": "AMZN",
+    "label": "Amazon",
+    "kind": "global",
+    "start": "1997-06",
+    "end": "2026-06"
+  },
+  {
+    "id": "META",
+    "label": "Meta",
+    "kind": "global",
+    "start": "2012-06",
+    "end": "2026-06"
+  },
+  {
+    "id": "TSLA",
+    "label": "Tesla",
+    "kind": "global",
+    "start": "2010-07",
+    "end": "2026-06"
   }
 ]
