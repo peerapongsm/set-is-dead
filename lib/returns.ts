@@ -32,6 +32,37 @@ export function taxRefund(amount: number, bracket: number): number {
   return amount * bracket;
 }
 
+// keep points whose ym is within the last `years` years of the series' last ym
+export function sliceYears(points: Point[], years: number): Point[] {
+  if (points.length === 0) return [];
+  const lastYm = points[points.length - 1].ym;
+  const cutoff = addMonths(lastYm, -years * 12);
+  return points.filter((p) => p.ym >= cutoff);
+}
+
+// cumulative DCA portfolio value per month: each month buy `monthly` THB of
+// units at that month's price; value[i] = (units so far) * price[i]
+export function dcaSeries(points: Point[], monthly: number): Point[] {
+  let units = 0;
+  return points.map((p) => {
+    if (p.value > 0) units += monthly / p.value;
+    return { ym: p.ym, value: units * p.value };
+  });
+}
+
+// total contributed
+export function dcaInvested(monthly: number, months: number): number {
+  return monthly * months;
+}
+
+function addMonths(ym: string, delta: number): string {
+  const [y, m] = ym.split("-").map(Number);
+  const total = y * 12 + (m - 1) + delta;
+  const ny = Math.floor(total / 12);
+  const nm = total - ny * 12 + 1;
+  return `${ny}-${String(nm).padStart(2, "0")}`;
+}
+
 function ymDiff(a: string, b: string): number {
   const [ay, am] = a.split("-").map(Number);
   const [by, bm] = b.split("-").map(Number);

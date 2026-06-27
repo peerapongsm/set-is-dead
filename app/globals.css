@@ -153,6 +153,53 @@ aside.controls {
   font-weight: 600;
 }
 
+/* mode switch — segmented control built from the chip system */
+.mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 5px;
+}
+.mode-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  border-radius: 9px;
+  padding: 9px 10px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+.mode-btn:hover:not(.on) { color: var(--ink); }
+.mode-btn.on {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(20, 22, 26, 0.06), 0 4px 12px -8px rgba(20, 22, 26, 0.2);
+}
+
+/* mode inputs */
+.field-stack { display: flex; flex-direction: column; gap: 12px; }
+.field { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.field .field-name { font-size: 14px; font-weight: 500; }
+.num-input {
+  width: 120px;
+  text-align: right;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 7px 11px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.num-input:focus { outline: none; border-color: #c2c7d0; }
+
 .divider { height: 1px; background: var(--line); margin: 20px 0; }
 
 .toggle-row {
@@ -254,6 +301,13 @@ select:disabled { color: var(--faint); cursor: default; background: var(--soft);
 }
 .hero .figure.win { color: var(--win); }
 .hero .figure.lose { color: var(--accent); }
+.hero .hero-sub {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+  margin: 10px 0 0;
+  font-variant-numeric: tabular-nums;
+}
 .hero .verdict {
   display: inline-flex;
   align-items: baseline;
