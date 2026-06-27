@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      - run: npm install --no-audit --no-fund
       - run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /set-is-dead
