@@ -16,7 +16,6 @@ import {
 import { alignAll } from "@/lib/align";
 import { GrowthChart, COLORS } from "@/app/components/GrowthChart";
 
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const YEAR_OPTS = Array.from({ length: 30 }, (_, i) => i + 1);
 
 type Mode = "lump" | "dca";
@@ -293,11 +292,14 @@ export default function Home() {
                     {sliced[0].points[0].ym} – {sliced[0].points.at(-1)!.ym}
                   </span>
                 </div>
-                <GrowthChart series={display} />
+                <div className="chart-scroll">
+                  <GrowthChart series={display} />
+                </div>
               </div>
 
               <div className="panel table-card">
                 <h2>สรุปตัวเลข</h2>
+                <div className="table-scroll">
                 {mode === "lump" ? (
                   <table>
                     <thead>
@@ -373,6 +375,7 @@ export default function Home() {
                     </tbody>
                   </table>
                 )}
+                </div>
                 {fundInPick && taxOn && (
                   <p className="note legend-note">
                     “+ลดหย่อน” = มูลค่ากองทุน + เงินภาษีที่ประหยัดได้ (ฐาน{" "}
@@ -388,7 +391,7 @@ export default function Home() {
       <footer>
         <button
           className="btn"
-          onClick={() => location.assign(`${BASE}/method/`)}
+          onClick={() => location.assign("/method/")}
         >
           วิธีคิด + ที่มาข้อมูล + ข้อจำกัด →
         </button>
