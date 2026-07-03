@@ -21,7 +21,6 @@ jobs:
           cache: npm
       - run: npm install --no-audit --no-fund
       - run: npm run build
-        env:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
