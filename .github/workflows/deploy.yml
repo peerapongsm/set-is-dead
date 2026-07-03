@@ -22,7 +22,6 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /set-is-dead
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
